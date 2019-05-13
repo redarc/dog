@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import DogBread from './components/dog-breed.js';
 import DogImage from './components/dog-image.js';
+
 import './App.css';
 
 class App extends Component {

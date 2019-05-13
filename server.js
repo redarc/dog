@@ -19,9 +19,17 @@ app.get('/dog/breeds', (req, res) => {
       res.send(result);
     })
     .catch(r_err => {
-      res.status(500).send({
-        error: r_err.response.data
-      });
+      console.log(r_err);
+      if(r_err.response && r_err.response.data) {
+        res.status(500).send({
+          error: r_err.response.data
+        });
+      } else {
+        res.status(500).send({
+          error: r_err.Error
+        });
+      }
+
     });
 });
 

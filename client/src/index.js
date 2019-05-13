@@ -4,6 +4,16 @@ import { BrowserRouter} from 'react-router-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import axios from 'axios';
+
+// Add a response interceptor
+axios.interceptors.response.use(function (response) {
+    return response;
+  }, function (error) {
+    console.log(error);
+    alert('Got an error');
+    return Promise.reject(error);
+});
 
 ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('root'));
 
