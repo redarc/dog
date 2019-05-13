@@ -8,6 +8,7 @@ This project was based on react and node.js
  1>. git clone
  2>. yarn install && cd client && yarn install
  3>. cd .. && yarn start
+ 4>. see http://localhost:5001
 
 3.TODO List
  1>. Switch to typescript
