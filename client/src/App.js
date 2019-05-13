@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import DogBread from './components/dog-breed.js';
+import DogImage from './components/dog-image.js';
 import './App.css';
 
 class App extends Component {
@@ -12,17 +13,7 @@ class App extends Component {
             <div className="main-left">left</div>
             <div className="main-center">
               <DogBread />
-
-              <div className="item-images">
-                <div className="dog-image">
-                  <img src="" alt="Dog Image" />
-                </div>
-
-                <div className="dog-image">
-                  <img src="" alt="Dog Image" />
-                </div>
-              </div>
-
+              <DogImage />
             </div>
 
             <div className="main-right">right</div>

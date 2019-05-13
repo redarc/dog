@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import store from '../utils/store.js';
 
 class DogBread extends React.Component {
 
@@ -25,30 +26,51 @@ class DogBread extends React.Component {
   selectBreed(e) {
     console.log('-- selectbreed');
     console.log(e.target.value);
+    if(!e.target.value) {
+      return;
+    }
+    const targetValue = e.target.value;
+
     this.setState({
-      selectedBreed: e.target.value
+      selectedBreed: targetValue
     });
 
-    if(this.state.data && e.target.value) {
+    if(this.state.data) {
       this.state.data.map(item => {
-        if(item.breed === e.target.value) {
+        if(item.breed === targetValue) {
           this.setState({
             subData: item.subbreed
           })
         }
+        return true;
       })
     } else {
       this.setState({
         subData: []
       })
     }
+
+    store.dispatch({
+      type: 'dog-breed',
+      data: targetValue
+    });
   }
 
   selectSubbreed(e) {
     console.log('-- selectSubbreed');
     console.log(e);
+    if(!e.target.value) {
+      return;
+    }
+
+    const targetValue = e.target.value;
     this.setState({
-      selectedSubbreed: e.target.value
+      selectedSubbreed: targetValue
+    });
+
+    store.dispatch({
+      type: 'dog-subbreed',
+      data: this.state.selectedBreed + '/' + targetValue
     });
   }
 
