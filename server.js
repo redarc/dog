@@ -19,7 +19,6 @@ app.get('/dog/breeds', (req, res) => {
       res.send(result);
     })
     .catch(r_err => {
-      console.log(r_err);
       res.status(500).send({
         error: r_err.response.data
       });
@@ -49,7 +48,6 @@ app.get('/dog/image', (req, res) => {
       });
     })
     .catch(r_err => {
-      console.log(r_err);
       res.status(500).send({
         error: r_err.response.data
       });

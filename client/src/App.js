@@ -10,12 +10,11 @@ class App extends Component {
          <div className="main-header">HEADER</div>
 
          <div className="main-body">
+           <div className="main-content">
+             <DogBread />
+             <DogImage />
+           </div>
             <div className="main-left">left</div>
-            <div className="main-center">
-              <DogBread />
-              <DogImage />
-            </div>
-
             <div className="main-right">right</div>
          </div>
 

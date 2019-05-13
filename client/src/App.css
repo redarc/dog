@@ -1,48 +1,44 @@
 .main {
   display: flex;
   display: -webkit-flex;
+  min-height: 100vh;
+  max-width: 100vw;
   flex-direction: column;
-}
-
-.main div {
-  flex: 1;
 }
 
 .main-body {
   display: flex;
+  flex: 1;
 }
 
-.main-header {
-  height: 100px;
+.main-header, .main-footer {
+  height: 50px;
   background: gray;
-}
-
-.main-footer {
-  height: 100px;
-  background: gray;
+  text-align: center;
 }
 
 .main-left {
   background: lightgray;
+  order: -1;
 }
 
 .main-right {
   background: lightgray;
 }
 
-.main-header,
-.main-footer,
 .main-left,
 .main-right {
-  flex: 0 0 20% !important;
+  flex: 0 0 12em;
   text-align: center;
 }
 
-.main-center {
+.main-content {
+  flex: 1;
   display: flex;
   flex-flow: column wrap;
   align-content: flex-start;
-  min-height: 800px;
+  min-height: calc(100vh-50px);
+  width: 100%;
 }
 
 .item-breed {
@@ -80,13 +76,16 @@
   justify-content: center;
 }
 
-.dog-image {
-  flex: 0 0 50% !important;
-  min-height: 500px;
+.dog-image-item {
+  flex: 0 1 50%!important;
   background: lightgreen;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.dog-image {
+  max-width: 50%;
 }
 
 .dog-breed-select {

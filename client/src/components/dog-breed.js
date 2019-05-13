@@ -24,8 +24,6 @@ class DogBread extends React.Component {
   }
 
   selectBreed(e) {
-    console.log('-- selectbreed');
-    console.log(e.target.value);
     if(!e.target.value) {
       return;
     }
@@ -57,8 +55,6 @@ class DogBread extends React.Component {
   }
 
   selectSubbreed(e) {
-    console.log('-- selectSubbreed');
-    console.log(e);
     if(!e.target.value) {
       return;
     }
@@ -75,7 +71,6 @@ class DogBread extends React.Component {
   }
 
   render() {
-    console.log('--- render --');
     let breeds = '';
     let subbreeds = '';
 
