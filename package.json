@@ -1,0 +1,20 @@
+{
+  "name": "dog-app",
+  "version": "1.0.0",
+  "description": "fullstack app for nterview",
+  "repository": "git@github.com:redarc/dog.git",
+  "author": "aaronyao <aaron.yao@oracle.com>",
+  "license": "MIT",
+  "scripts": {
+    "client": "cd client && yarn start",
+    "server": "nodemon server.js",
+    "start": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+  },
+  "dependencies": {
+    "express": "^4.16.2",
+    "nodemon": "^1.19.0"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0"
+  }
+}
