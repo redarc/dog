@@ -1,10 +1,16 @@
 import React from 'react';
 import axios from 'axios';
-import store from '../utils/store.js';
+import store from '../utils/store';
 
-class DogBread extends React.Component {
+interface IDogBreedState {
+  data: any[],
+  subData: any[],
+  selectedBreed: string,
+  selectedSubbreed: string,
+}
 
-  constructor(props) {
+class DogBreed extends React.Component<any, IDogBreedState> {
+  constructor(props: any) {
     super(props);
     this.state = {
       data: [],
@@ -23,7 +29,7 @@ class DogBread extends React.Component {
     });
   }
 
-  selectBreed(e) {
+  public selectBreed(e: any): void {
     if(!e.target.value) {
       return;
     }
@@ -54,7 +60,7 @@ class DogBread extends React.Component {
     });
   }
 
-  selectSubbreed(e) {
+  public selectSubbreed(e: any): any {
     if(!e.target.value) {
       return;
     }
@@ -70,9 +76,9 @@ class DogBread extends React.Component {
     });
   }
 
-  render() {
-    let breeds = '';
-    let subbreeds = '';
+  public render() {
+    let breeds: any[] = [];
+    let subbreeds: any[] = [];
 
     if(this.state.data) {
       breeds = this.state.data.map((item, index) => {
@@ -105,4 +111,4 @@ class DogBread extends React.Component {
   }
 }
 
-export default DogBread;
+export default DogBreed;

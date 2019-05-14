@@ -1,13 +1,19 @@
 import React from 'react';
 import axios from 'axios';
-import store from '../utils/store.js';
+import store from '../utils/store';
 
-class DogImage extends React.Component {
+interface IDogImageState {
+  data: any[],
+  type: string
+}
 
-  constructor(props) {
+class DogImage extends React.Component<any, IDogImageState> {
+
+  constructor(props: any) {
     super(props);
     this.state = {
-      data: []
+      data: [],
+      type: ''
     };
   }
 
@@ -16,7 +22,7 @@ class DogImage extends React.Component {
       let state = store.getState();
       console.log(state);
       if(state.type === 'dog-breed') {
-        this.getDogImages(state.data, null);
+        this.getDogImages(state.data, '');
       } else if(state.type === 'dog-subbreed') {
         const breed = state.data.split('/')[0];
         const subbreed = state.data.split('/')[1];
@@ -25,7 +31,7 @@ class DogImage extends React.Component {
     });
   }
 
-  getDogImages(breed, subbreed) {
+  private getDogImages(breed: string, subbreed: string): void {
     if(!breed) {
       return;
     }
@@ -43,8 +49,8 @@ class DogImage extends React.Component {
     });
   }
 
-  render() {
-    let dogImages = '';
+  public render() {
+    let dogImages: any[] = [];
     if(this.state.data) {
       dogImages = this.state.data.map((item, index) => {
         return (
