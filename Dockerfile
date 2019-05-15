@@ -1,19 +1,16 @@
 #FROM node:latest
-#FROM hub.c.163.com/nce2/nodejs:0.12.2
 
-#RUN mkdir -p /home/dog
-#WORKDIR /home/dog
+FROM node:10.15.3-alpine
 
-#COPY . /home/dog
+RUN mkdir -p /home/dog
+WORKDIR /home/dog
 
-#RUN npm install && cd client && npm install && cd ..
+COPY . /home/dog
 
-#EXPOSE 3000
+RUN npm install
 
-#ENTRYPOINT ["npm", "run"]
-#CMD ["start"]
+EXPOSE 5000
 
+ENTRYPOINT ["npm", "run"]
+CMD ["server"]
 
-FROM nginx:latest
-COPY ./client/build /usr/share/nginx/html/
-COPY ./deploy/default.conf /etc/nginx/conf.d/
