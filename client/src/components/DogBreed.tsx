@@ -98,12 +98,14 @@ class DogBreed extends React.Component<any, IDogBreedState> {
       <div className="item-breed">
         <div className="dog-breed">
           <select className="dog-breed-select" value={this.state.selectedBreed} onChange={this.selectBreed.bind(this)}>
+            <option style={{display: 'none'}}></option>
             {breeds}
           </select>
         </div>
 
         <div className="dog-subbreed">
           <select className="dog-breed-select" value={this.state.selectedSubbreed} onChange={this.selectSubbreed.bind(this)}>
+            <option style={{display: 'none'}}></option>
             {subbreeds}
           </select>
         </div>
