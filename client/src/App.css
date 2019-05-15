@@ -28,7 +28,7 @@
 
 .main-left,
 .main-right {
-  flex: 0 0 12em;
+  flex: 0 0 6em;
   text-align: center;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .item-breed {
-  flex: 1;
+  flex: 0 1 100px;
   display: flex;
   text-align: center;
   width: 100%;
@@ -78,16 +78,19 @@
 
 .dog-image-item {
   flex: 0 1 50%!important;
-  background: lightgreen;
+  background: #f8ffef;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .dog-image {
-  max-width: 50%;
+  max-width: 100%;
+  max-height: 200px;
+  padding: 10px;
 }
 
 .dog-breed-select {
-  min-width: 100px;
+  min-width: 200px;
+  height: 25px;
 }

@@ -23,9 +23,11 @@ class DogBreed extends React.Component<any, IDogBreedState> {
   componentDidMount() {
     axios.get('/dog/breeds').then(res => {
       console.log(res);
-      this.setState((state, props) => ({
-        data: res.data
-      }));
+      if(res.data instanceof Array) {
+        this.setState((state, props) => ({
+          data: res.data
+        }));
+      }
     });
   }
 

@@ -46,7 +46,6 @@ app.get('/dog/image', (req, res) => {
   let url = 'https://dog.ceo/api/breed/' + breed + subfix + '/images';
   axios.get(url)
     .then(r_res => {
-      console.log(r_res);
       let result = [];
       if (r_res && r_res.data && r_res.data.message) {
         result = r_res.data.message;
