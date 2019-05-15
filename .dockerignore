@@ -2,6 +2,5 @@ client/src/*
 client/public/*
 deploy/*
 e2e/*
-node_modules/*
 .svn/*
 .git/*
