@@ -11,7 +11,8 @@
   flex: 1;
 }
 
-.main-header, .main-footer {
+.main-header,
+.main-footer {
   height: 50px;
   background: gray;
   text-align: center;
@@ -77,7 +78,7 @@
 }
 
 .dog-image-item {
-  flex: 0 1 50%!important;
+  flex: 0 1 50% !important;
   background: #f8ffef;
   display: flex;
   align-items: center;
@@ -93,4 +94,9 @@
 .dog-breed-select {
   min-width: 200px;
   height: 25px;
+}
+
+#nprogress .bar {
+  background: lightgreen !important;
+  height: 2px;
 }

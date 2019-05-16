@@ -1,11 +1,15 @@
 import React from 'react';
 import DogBreed from './components/DogBreed';
 import DogImage from './components/DogImage';
+import interceptor from './utils/axios-interceptor';
 import './App.css';
+
+interceptor();
 
 const App: React.FC = () => {
   return (
    <div className="main">
+
        <div className="main-header">HEADER</div>
 
        <div className="main-body">
