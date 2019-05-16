@@ -14,3 +14,10 @@
 ## 3.TODO List
  1. refactory code
  2. setup env configuration file for production/development
+
+## 4. How to deploy this project
+ 1. make sure you have installed node.js, typescript, docker, yarn
+ 2. execute ./deploy.sh
+
+## 5. Demo
+ see http://101.37.150.67:5000/
