@@ -1,4 +1,4 @@
-const server = require('../server');
+const server = require('../dist/server');
 const request = require('supertest')(server.app)
 const should = require('should');
 
@@ -9,7 +9,6 @@ describe('Test API GET /dog/breeds', function() {
       .expect('Content-Type', /json/)
       .expect(200)
       .end((err, res) => {
-        // console.log(res.body);
         res.body.should.be.an.instanceOf(Array);
         if(err) throw err;
         done();
@@ -40,8 +39,8 @@ describe('Test API GET /dog/image?breed=bulldog&subbreed=english', function() {
       .expect(200)
       .end((err, res) => {
         res.body.should.have.property('images');
-        done();
         if(err) throw err;
+        done();
       });
   });
 });

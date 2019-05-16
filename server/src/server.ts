@@ -1,13 +1,13 @@
-const express = require('express');
-const app = express();
+import express = require('express');
+import path = require('path');
+import axios from 'axios';
+const app: express.Application = express();
 const port = process.env.PORT || 5000;
-const axios = require('axios');
-const path = require('path');
 
-app.use(express.static(path.join(__dirname, 'client/build')));
+app.use(express.static(path.resolve('../client/build')));
 
 app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+  res.sendFile(path.join(path.resolve('../client/build'), 'index.html'));
 });
 
 //get breed list

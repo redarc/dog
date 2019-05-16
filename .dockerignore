@@ -1,5 +1,8 @@
 client/src/*
 client/public/*
+client/node_modules/*
+server/src/*
+server/test/*
 deploy/*
 e2e/*
 .svn/*
